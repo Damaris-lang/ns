@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+    <link rel="stylesheet" href="buscador.css">
+</head>
+<body>
+
+    <header>
+        <h1>Aphodites Gaze</h1>
+        <nav>
+            <a href="cara.html">INICIO</a>
+            <a href="nosotras.html">NOSOTRAS</a>
+            <a href="cuidados.html">CUIDADOS</a>
+            <a href="queti.html">CATALOGO</a>
+        </nav>
+        <input type="text" id="buscador" placeholder="Buscar...">
+
+        <div id="contenedor-resultados" style="display: none;">
+        </div>
+    </header>
+
+    <div class="banner">
+    </div>
+
+    <h2>Resultados de búsqueda</h2>
+    <div id="resultados"></div>
+
+
+
+    <script>
+        // Obtener el término de búsqueda desde la URL
+       // 🔹 Obtener el término de búsqueda desde la URL para mostrar resultados en esta página
+const params = new URLSearchParams(window.location.search);  
+const textoBusqueda = params.get("query")?.toLowerCase().trim();
+
+const productos = [
+    { nombre: "Pestañas Nagaraku Mix", precio: "$240.00", enlace: "pn.html", imagen: "pestañasnagarakup.png" },
+    { nombre: "Pestañas Nagaraku Tecnologicas", precio: "$250.00", enlace: "pn2.html", imagen: "pestañast.png" },
+    { nombre: "Pestañas Nagaraku Clasicas B", precio: "$259.00", enlace: "clasicas.html", imagen: "clasicas0.07D.png" },
+    { nombre: "Pestañas Nagaraku 14mm D", precio: "$250.00", enlace: "10mmp.html", imagen: "10mmp.png" },
+    { nombre: "Pestañas Nagaraku Tecnologicas 6WD", precio: "$250.00", enlace: "p6wT0.07D.html", imagen: "p6wT0.07D.png" },
+    { nombre: "Pestañas Nagaraku Tecnologicas 4WC", precio: "$250.00", enlace: "p4wT0.07c.html", imagen: "p4wT0.07c.png" },
+    { nombre: "Pestañas Nagaraku Tecnologicas 5WD", precio: "$250.00", enlace: "P5wT0.07D.html", imagen: "P5wT0.07D.png" },
+    { nombre: "Pestañas By Beauty LU Tecnologicas 3WD", precio: "$250.00", enlace: "blu3wD.html", imagen: "blu3wD.png" },
+    { nombre: "Pestañas By Beauty LU Tecnologicas 4WD", precio: "$250.00", enlace: "blu4wD.html", imagen: "blu4wD.png" },
+    { nombre: "Pestañas By Beauty LU Tecnologicas 5WD", precio: "$250.00", enlace: "blu5wD.html", imagen: "blu5wD.png" },
+    { nombre: "Cepillo para pestañas con brillos", precio: "$20.00", enlace: "cepillobrillo.html", imagen: "cepillo.png" },
+    { nombre: "Cepillos para pestañas de diversos colores", precio: "$30.00", enlace: "cepillocolor.html", imagen: "cr.png" },
+    { nombre: "Cepillo para pestañas rosas mate", precio: "$25.00", enlace: "cepillomate.html", imagen: "crr.png" },
+    { nombre: "Espejo para pestañas", precio: "$80.00", enlace: "espejo.html", imagen: "espejo.png" },
+    { nombre: "Piedra Jade", precio: "$50.00", enlace: "piedrajade.html", imagen: "piedrajade.png" },
+    { nombre: "Parches de Hydrogel", precio: "$10.00", enlace: "parches.html", imagen: "parches.png" },
+    { nombre: "Envase para jabón", precio: "$50.00", enlace: "botejabon.html", imagen: "botejabon.png" },
+    { nombre: "Cepillo para rizado", precio: "$8.00", enlace: "rizadocep.html", imagen: "rizadocep.png" },
+    { nombre: "Cepillo para laminado", precio: "$8.00", enlace: "laminadong.html", imagen: "laminadong.png" },
+    { nombre: "Cepillo Microbrush", precio: "$5.00", enlace: "microrosa.html", imagen: "microrosa.png" },
+    { nombre: "Mapping de medidas", precio: "$70.00", enlace: "maping.html", imagen: "maping.png" },
+    { nombre: "Maniqui de practica", precio: "$180.00", enlace: "maniqui.html", imagen: "maniqui.png" },
+    { nombre: "Ventilador para pestañas", precio: "$150.00", enlace: "ventilador.html", imagen: "ventilador.png" },
+    { nombre: "Humificador para pestañas", precio: "$100.00", enlace: "humificador.html", imagen: "humificador.png" },
+    { nombre: "Brocha para pestañas", precio: "$10.00", enlace: "brocha.html", imagen: "li.png" },
+    { nombre: "Pipeta para pestañas", precio: "$25.00", enlace: "pipeta.html", imagen: "pli.png" },
+    { nombre: "Jabón MB", precio: "$170.00", enlace: "jabon.html", imagen: "jabon.png" },
+    { nombre: "Pegamento IB Ultra Super", precio: "$299.00", enlace: "pd.html", imagen: "pegamento.png" },
+    { nombre: "Pegamento IB Super Plus", precio: "$250.00", enlace: "pd2.html", imagen: "pegamento2.png" },
+    { nombre: "Pegamento IB Expert", precio: "$280.00", enlace: "p3.html", imagen: "pegamento3.png" },
+    { nombre: "Pegamento Lady Black", precio: "$300.00", enlace: "ladyb.html", imagen: "ladyb.png" },
+    { nombre: "Pegamento Erika", precio: "$270.00", enlace: "pEK.html", imagen: "pEK.png" },
+    { nombre: "Pegamento 360", precio: "$350.00", enlace: "p360.html", imagen: "p360.png" },
+    { nombre: "Primer IB", precio: "$290.00", enlace: "primer.html", imagen: "primerib.png" },
+    { nombre: "Bonder IB", precio: "$260.00", enlace: "bonderid.html", imagen: "bonderid.png" },
+    { nombre: "Bonder IB V2", precio: "$230.00", enlace: "bonderidv2.html", imagen: "bonderidv2.png" },
+    { nombre: "Removedor 360", precio: "$320.00", enlace: "rev360.html", imagen: "rev360.png" },
+    { nombre: "Removedor Erika", precio: "$300.00", enlace: "revEK.html", imagen: "revEK.png" },
+    { nombre: "Removedor IB", precio: "$290.00", enlace: "revIB.html", imagen: "revIB.png" },
+    { nombre: "Removedor Wing Star", precio: "$200.00", enlace: "revWS.html", imagen: "revWS.png" },
+    { nombre: "Removedor Wing Star Gel", precio: "$250.00", enlace: "revWSgel.html", imagen: "revWSgel.png" },
+    { nombre: "Pinzas Nagaraku", precio: "$100.00", enlace: "pz.html", imagen: "pinzasnagaraku.png" },
+    { nombre: "Pinzas Sitea", precio: "$300.00", enlace: "pzz.html", imagen: "pinzass.png" },
+    { nombre: "Pinzas Nagaraku", precio: "$250.00", enlace: "pinzasngr.html", imagen: "pz.png" },
+    { nombre: "Pinzas Star 3pz", precio: "$200.00", enlace: "pSTAR.html", imagen: "pSTAR.png" },
+    { nombre: "Pinzas Vetus 6pz", precio: "$500.00", enlace: "pVETUS.html", imagen: "pVETUS.png" },
+    { nombre: "Pinzas Vetus 5pz", precio: "$430.00", enlace: "pVETUS2.html", imagen: "pVETUS2.png" },
+    { nombre: "Pinzas May 3pz 1 estuche", precio: "$300.00", enlace: "pMAY.html", imagen: "pMAY.png" },
+    { nombre: "Liquido esterilizante marca DERMO 500ml", precio: "$550.00", enlace: "liqDERMO.html", imagen: "liqDERMO.png" },
+    { nombre: "Fundas esterilizandas 2pz", precio: "$25.00", enlace: "fundaseste.html", imagen: "fundaseste.png" },
+    { nombre: "Paquete de fundas esterilizadas 6pz", precio: "$30.00", enlace: "fundaspack.html", imagen: "fundaspack.png" },
+];
+
+const resultados = document.getElementById("resultados");
+
+if (textoBusqueda) {
+    const resultadosBusqueda = productos.filter(producto =>
+        producto.nombre.toLowerCase().includes(textoBusqueda)
+    );
+
+    if (resultadosBusqueda.length > 0) {
+        resultadosBusqueda.forEach((resultado) => {
+            const elemento = document.createElement("div");
+            elemento.classList.add("resultado-item");
+
+            elemento.innerHTML = `
+                <figure>
+                    <img src="${resultado.imagen}" alt="${resultado.nombre}">
+                </figure>
+                <div class="resultado-info">
+                    <h2>${resultado.nombre}</h2>
+                    <h3 class="price">${resultado.precio}</h3>
+                    <button onclick="location.href='${resultado.enlace}'">Ver más</button>
+                </div>
+            `;
+
+            resultados.appendChild(elemento);
+        });
+    } else {
+        resultados.innerHTML = "<p>No se encontraron resultados.</p>";
+    }
+}
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aphrodite’s Gaze | Carrito de Compras</title>
+
+  <!-- Importación de la fuente Gealova -->
+  <link href="https://fonts.googleapis.com/css2?family=Gealova:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Enlace a la hoja de estilos externa -->
+  <link rel="stylesheet" href="carrito.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO RECTANGULAR -->
+  <header class="header">
+    <div class="header-content">
+      <h1 class="brand-title">Aphrodite’s Gaze</h1>
+    </div>
+  </header>
+
+  <!-- SECCIÓN DE PRODUCTOS -->
+  <main class="products">
+    <h2>Selecciona tus productos</h2>
+    <div class="product-list">
+      <div class="product">
+        <p>Blusa elegante</p>
+        <span>$25.99</span>
+        <button class="add-to-cart" onclick="addToCart('Blusa elegante', 25.99)">Agregar al carrito</button>
+      </div>
+      <div class="product">
+        <p>Pantalón de lino</p>
+        <span>$39.99</span>
+        <button class="add-to-cart" onclick="addToCart('Pantalón de lino', 39.99)">Agregar al carrito</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- CONTENEDOR DEL CARRITO -->
+  <section class="cart-container">
+    <h2>Tu Carrito</h2>
+    <div id="cart-items">
+      <p class="empty-cart">Tu carrito está vacío.</p>
+    </div>
+    <button id="clear-cart" class="button">Vaciar Carrito</button>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    © 2025 Aphrodite’s Gaze | Todos los derechos reservados.
+  </footer>
+
+  <!-- Script para la funcionalidad del carrito -->
+  <script src="script.js">
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartDisplay();
+}
+
+function updateCartDisplay() {
+  const cartContainer = document.getElementById("cart-items");
+  cartContainer.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = "<p class='empty-cart'>Tu carrito está vacío.</p>";
+  } else {
+    cart.forEach((item, index) => {
+      const productElement = document.createElement("div");
+      productElement.classList.add("cart-item");
+      productElement.innerHTML = `
+        <p>${item.name} - $${item.price}</p>
+        <button onclick="removeFromCart(${index})" class="remove-btn">Eliminar</button>
+      `;
+      cartContainer.appendChild(productElement);
+    });
+  }
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartDisplay();
+}
+
+document.getElementById("clear-cart").addEventListener("click", function () {
+  cart = [];
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartDisplay();
+});
+
+document.addEventListener("DOMContentLoaded", updateCartDisplay);
+
+  </script>
+
+</body>
+</html>
+
+</script>
+
+
+</body>
+</html>

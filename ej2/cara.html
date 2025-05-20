@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aphodites Gaze</title>
+    <link rel="stylesheet" type="text/css" href="ejemplo2.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            Envío gratis a partir de $500
+        </div>
+        <nav>
+            <div class="logo">Aphodites Gaze</div>
+            <ul class="nav-links">
+                <li><a href="queti.html">CATALOGO</a></li>
+                <li><a href="nosotras.html">NOSOTRAS</a></li>
+                <li><a href="cuidados.html">CUIDADOS</a></li>
+            </ul>
+            <!-- Contenedor del inicio de sesión y buscador -->
+<div class="top-bar">
+    <!-- Logo de inicio de sesión -->
+    <a href="secion.html" onclick="abrirLogin()" class="login-logo">
+        <img src="s.jpeg" alt="Iniciar sesión">
+    </a>
+</div>
+
+            <main>
+        <input type="text" id="buscador" placeholder="Buscar...">
+
+        <div id="contenedor-resultados" style="display: none;">
+            <h2>Resultados de búsqueda</h2>
+            <div id="resultados"></div>
+        </div>
+
+    </main>
+
+    <script type="text/javascript">
+        document.getElementById("buscador").addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {  // Detecta si el usuario presiona "Enter"
+        const textoBusqueda = document.getElementById("buscador").value.trim();
+        
+        if (textoBusqueda !== "") {
+            // 🔹 Redirige a la nueva página de resultados y pasa el término de búsqueda
+            window.location.href = `buscador.html?query=${encodeURIComponent(textoBusqueda)}`;
+        }
+    }
+});
+
+</script>
+
+    
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+
+            <p>.</p>
+        </section>
+    </main>
+
+    
+    <!-- Nueva sección de "IMPRESCINDIBLES Más vendidos" -->
+    <section class="best-sellers">
+
+        <h2>IMPRESCINDIBLES</h2>
+        <a href="queti.html" class="cta-button">COMPRAR AHORA</a>
+        <h3>Más vendidos</h3>
+
+        <div class="product-list">
+            <div class="product">
+                <a href="pn.html" class="zoom"> 
+                    <img src="pestañasnagarakup.png" class="imagen">
+                </a>
+                <p class="product-name">Pestañas Nagaraku Mix</p>
+                <p class="product-price">$240.00</p>
+            </div>
+
+            <div class="product">
+                <a href="pz.html" class="zoom">
+                <img src="pinzasnagaraku.png" alt="pinzas" class="imagen">
+            </a>
+                <p class="product-name">Pinzas Nagaraku</p>
+                <p class="product-price">$100.00</p>
+            </div>
+
+            <div class="product">
+                <a href="pd.html" class="zoom">
+                <img src="pegamento.png" alt="pegamento" class="imagen">
+            </a>
+                <p class="product-name">Pegamento</p>
+                <p class="product-price">$299.00</p>
+            </div>
+
+            <div class="product">
+                <a href="parches.html" class="zoom">
+                <img src="parches.png" alt="parches Hydrogel" class="imagen">
+            </a>
+                <p class="product-name">Parches de Hydrogel</p>
+                <p class="product-price">$10.00</p>
+            </div>
+
+            <div class="product">
+                <a href="piedrajade.html" class="zoom">
+                <img src="piedrajade.png" alt="piedra jade" class="imagen">
+            </a>
+                <p class="product-name">Piedra Jade</p>
+                <p class="product-price">$50.00</p>
+            </div>
+
+            <div class="product">
+                <a href="cepillobrillo.html" class="zoom">
+                <img src="cepillo.png" alt="cepillo" class="imagen">
+            </a>
+                <p class="product-name">Cepillo de pestaña</p>
+                <p class="product-price">$5.00</p>
+            </div>
+            
+        </div>
+        <a href="queti.html" class="best-sellers-button">Comprar más vendidos</a>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>ACERCA DE NOSOTRAS</h3>
+            <ul>
+                <li><a href="nosotras.html">Historia de la marca</a></li>
+                <li><a href="preguntasfrecuentes.html">Preguntas frecuentes</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>ATENCIÓN AL CLIENTE</h3>
+            <ul>
+                <li><a href="politicaenvios.html">Política de envíos</a></li>
+                <li><a href="politicareembolsos.html">Política de reembolso</a></li>
+                <li><a href="politicaprivacidad.html">Política de privacidad</a></li>
+                <li><a href="terminosycondiciones.html">Términos y condiciones</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>CONTACTANOS</h3>
+            <ul>
+                <li><a>adfernandeztapia@gmail.com"</a></li>
+                <li><a>(753)1408049</a></li>
+                <li><a href="politicaprivacidad.html">Atencion al cliente</a></li>
+                <li><a href="registro.html">Comentarios</a></li>
+                
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>SÍGUENOS</h3>
+            <div class="social-icons">
+                <a href="#"><img src="logof.png" alt="Facebook"></a>
+                <a href="#"><img src="logox.png" alt="Twitter"></a>
+                <a href="https://pin.it/6ki5dHCT3"><img src="logopin.png" alt="Pinterest"></a>
+                <a href="#"><img src="logoig.png" alt="Instagram"></a>
+                <a href="#"><img src="logott.png" alt="TikTok"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025, Aphodite's Gaze. Todos los derechos reservados.</p>
+        <p>México MX ($)</p>
+    </div>
+</footer>
+
+
+</body>
+</html>

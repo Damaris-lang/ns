@@ -1,0 +1,109 @@
+/* === VARIABLES DE COLOR Y FUENTE === */
+:root {
+  --perla-claro: #F8E8DC;  
+  --perla: #E3C4A8;
+  --text-dark: #2c2c2c;
+  --shadow: rgba(0,0,0,0.1);
+}
+
+/* === RESET Y FUENTE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gealova', sans-serif;
+}
+
+/* === ENCABEZADO === */
+.header {
+  background-color: var(--perla);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 80px;
+  height: auto;
+}
+
+.brand-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* === SECCIÓN DE PRODUCTOS === */
+.products {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--perla-claro);
+}
+
+.product-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow);
+  text-align: center;
+}
+
+/* === BOTÓN ESTILIZADO === */
+.add-to-cart {
+  padding: 12px 20px;
+  background-color: var(--perla);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 3px 10px var(--shadow);
+}
+
+.add-to-cart:hover {
+  background-color: var(--text-dark);
+  transform: scale(1.07);
+}
+
+/* === CONTENEDOR DEL CARRITO === */
+.cart-container {
+  background: white;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px var(--shadow);
+  text-align: center;
+}
+
+/* === BOTONES DEL CARRITO === */
+.button, .remove-btn {
+  padding: 10px;
+  background-color: var(--perla);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 500;
+}
+
+.button:hover, .remove-btn:hover {
+  background-color: var(--text-dark);
+}

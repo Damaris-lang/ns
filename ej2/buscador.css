@@ -1,0 +1,262 @@
+/* Estilo general */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #faf7f2; /* Perla blanco */
+    color: #3a2c2c; /* Tonalidad elegante */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*parte de arriba de envio gratis*/
+.banner {
+    background-color: #f8e4e4;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+/* Contenedor de resultados */
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Tarjetas de productos */
+.resultado-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.resultado-item:hover {
+    transform: scale(1.05);
+}
+
+/* Imágenes */
+.resultado-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 4px solid #d4af37; /* Detalle dorado */
+}
+
+/* Información del producto */
+.resultado-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.resultado-info h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3a2c2c;
+}
+
+.resultado-info .price {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Botón */
+.resultado-info button {
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.resultado-info button:hover {
+    background: #b8962e; /* Dorado más oscuro */
+}
+
+/* Estilo general */
+body {
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Fondo claro */
+    color: #3a2c2c; /* Color de texto refinado */
+}
+
+/* Encabezado */
+header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 2px solid #d4af37; /* Línea dorada */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3a2c2c;
+    margin: 0; /* 🔹 Evita que el título tenga margen innecesario */
+    text-align: left; /* 🔹 Mueve el texto hacia la izquierda */
+    padding-left: 20px; /* 🔹 Ajusta su posición más cerca del borde izquierdo */
+}
+
+
+/* Menú de navegación */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3a2c2c;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #d4af37; /* Dorado al pasar el mouse */
+}
+
+/* Banner */
+.banner {
+    background-image: url('logoo.jpg'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 160px 80px;
+    text-align: center;
+    color: #fff;
+}
+
+.banner h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Contenedor de resultados */
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Tarjetas de productos */
+.resultado-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    padding: 15px;
+}
+
+.resultado-item:hover {
+    transform: scale(1.05);
+}
+
+/* Imágenes */
+.resultado-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid #d4af37; /* Detalle dorado */
+}
+
+/* Información del producto */
+.resultado-info {
+    padding: 15px;
+}
+
+.resultado-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3a2c2c;
+}
+
+.resultado-info .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #d4af37; /* Dorado */
+}
+
+/* Botón */
+.resultado-info button {
+    background: #d4af37; /* Dorado */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.resultado-info button:hover {
+    background: #b8962e; /* Dorado más oscuro */
+}
+body {
+    font-family: gealova; /* Fuente personalizada */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina relleno predeterminado */
+    background-color: #f5f5f5; /* Color de fondo gris claro */
+    min-height: 100vh; /* Asegura que la página no se extienda demasiado */
+}
+
+/* Contenedor de productos en forma de cuadrícula */
+.product {
+    display: grid; /* Usa CSS Grid para organizar los productos */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 🔹 Ajuste dinámico de columnas para evitar exceso de ancho */
+    column-gap: 10px; /* 🔹 Reduce el espacio entre columnas */
+    position: relative;
+    margin: 0 auto; /* 🔹 Centra el contenido */
+    max-width: 1100px; /* 🔹 Limita el ancho total de la página */
+}
+
+/* Estilo general de cada producto */
+.item {
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Efecto al pasar el mouse sobre un producto */
+.item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20); /* Sombra flotante */
+}
+
+/* Información del producto: texto y botón */
+.info-product {
+    padding: 15px 30px; /* Espaciado interior */
+    line-height: 2; /* Espaciado entre líneas */
+    display: flex;
+    flex-direction: column; /* Acomoda los elementos en columna */
+    gap: 10px; /* Espaciado entre elementos */
+}
+
+/* Botón de acción dentro del producto */
+.info-product button {
+    border: none; /* Elimina bordes */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+}
+

@@ -1,0 +1,89 @@
+body {
+    font-family: geovala;
+    margin: 0;
+    padding: 0;
+    background-color: #f4efe4; /* Color perla claro */
+}
+
+header {
+    background-color: #d6c2b0;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-image: url(fondo.png);
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links li {
+    margin: 80px;}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #5c4b3f;
+    font-weight: bold;
+}
+
+#contacto {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contacto h2 {
+    text-align: center;
+    color: #5c4b3f;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #5c4b3f;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #d6c2b0;
+    border-radius: 8px;
+    background-color: #f9f7f1;
+}
+
+button {
+    background-color: #d6c2b0;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #b5a08c;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #d6c2b0;
+    color: white;
+    margin-top: 50px;
+}
